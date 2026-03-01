@@ -17,10 +17,17 @@ final class Addresses
         string $network = Networks::DEFAULT
     ): string {
         $norm = Normalize::username($username);
-        [$addr] = Pda::find(
-            ['escrow', strtolower($platform), $norm],
-            Networks::programId($network)
-        );
+        [$addr] = Pda::find(['escrow', strtolower($platform), $norm], Networks::programId($network));
+        return $addr;
+    }
+
+    public static function getIdentityAddress(
+        string $platform,
+        string $username,
+        string $network = Networks::DEFAULT
+    ): string {
+        $norm = Normalize::username($username);
+        [$addr] = Pda::find(['identity', strtolower($platform), $norm], Networks::programId($network));
         return $addr;
     }
 }
