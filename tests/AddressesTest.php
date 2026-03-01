@@ -27,4 +27,12 @@ final class AddressesTest extends TestCase
         $b = Addresses::getPaymentAddress('twitter', '@BLKNOIZ06');
         $this->assertSame($a, $b);
     }
+
+    public function testPaymentUnicode(): void
+    {
+        $this->assertSame(
+            'k7JEBhVHHWLrNdhJ87cPbpgJr98kDVQuqUb5HsVKW7S',
+            Addresses::getPaymentAddress('twitter', 'Ansem 🐂🀄️')
+        );
+    }
 }
