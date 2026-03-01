@@ -10,4 +10,17 @@ final class Addresses
         [$addr] = Pda::find(['config'], Networks::programId($network));
         return $addr;
     }
+
+    public static function getPaymentAddress(
+        string $platform,
+        string $username,
+        string $network = Networks::DEFAULT
+    ): string {
+        $norm = Normalize::username($username);
+        [$addr] = Pda::find(
+            ['escrow', strtolower($platform), $norm],
+            Networks::programId($network)
+        );
+        return $addr;
+    }
 }
