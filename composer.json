@@ -1,0 +1,24 @@
+{
+  "name": "sodiummoney/sdk-php",
+  "description": "Derive Sodium payment addresses from social handles on Solana",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "ext-sodium": "*",
+    "stephenhill/base58": "^1.1"
+  },
+  "require_dev": {
+    "phpunit/phpunit": "^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sodium\\Sdk\\": "src/"
+    }
+  },
+  "autoload_dev": {
+    "psr-4": {
+      "Sodium\\Sdk\\Tests\\": "tests/"
+    }
+  }
+}
