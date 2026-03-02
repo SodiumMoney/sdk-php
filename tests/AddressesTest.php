@@ -35,4 +35,20 @@ final class AddressesTest extends TestCase
             Addresses::getPaymentAddress('twitter', 'Ansem 🐂🀄️')
         );
     }
+
+    public function testIdentityBlknoiz06(): void
+    {
+        $this->assertSame(
+            'T4gKVCxkB3c6pERaS67fLBgMyg1FpGmjeNcrGvbuLY1',
+            Addresses::getIdentityAddress('twitter', '@blknoiz06')
+        );
+    }
+
+    public function testIdentityUnicode(): void
+    {
+        $this->assertSame(
+            '83McthMovBoPHgXPVGsif61zkCZNEE7tmypdNkxh1cv5',
+            Addresses::getIdentityAddress('twitter', 'Ansem 🐂🀄️')
+        );
+    }
 }
