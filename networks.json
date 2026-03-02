@@ -1,0 +1,11 @@
+{
+  "devnet": {
+    "programId": "4qduM91VaZj9W9hRypygozjN7ZCeLPPe5veM2RhB7qgD",
+    "label": "Devnet"
+  },
+  "mainnet": {
+    "programId": "FQr13NtzFwLp8ZZwR8SWfjEGC4F4MBrJDrcSZuEsv3Gx",
+    "label": "Mainnet-beta"
+  },
+  "defaultNetwork": "mainnet"
+}
